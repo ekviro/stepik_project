@@ -5,7 +5,7 @@ import time
 
 
 class BasePage():
-    def __init__(self, browser, url, timeout=10):
+    def __init__(self, browser, url, timeout=3):
         self.browser = browser
         self.url = url
         self.browser.implicitly_wait(timeout)
@@ -34,3 +34,9 @@ class BasePage():
             alert.accept()
         except NoAlertPresentException:
             print("No second alert presented")
+
+    def get_element_text(self, how, what):
+        if self.is_element_present(how, what):
+            return self.browser.find_element(how, what).text
+
+
