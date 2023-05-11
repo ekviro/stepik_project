@@ -3,4 +3,5 @@ from selenium.webdriver.common.by import By
 
 
 class MainPage(BasePage):
+    """Класс для методов работы с главной страницей."""
     pass
